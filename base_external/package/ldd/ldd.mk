@@ -12,15 +12,13 @@ LDD_GIT_SUBMODULES = YES
 LDD_MODULE_SUBDIRS = misc-modules scull
 LDD_MODULE_MAKE_OPTS = KVERSION=$(LINUX_VERSION_PROBED)
 
-define LDD_BUILD_CMDS
+define LDD_CMDS
 	$(MAKE) 
 endef
 
 define LDD_INSTALL_TARGET_CMDS
- 	$(INSTALL) -d 0755 $(TARGET_DIR)/lib/modules/5.15.18/extra/
- 	$(INSTALL) -m 0755 $(@D)/misc-modules/scull.ko $(TARGET_DIR)/lib/modules/5.15.18/extra/
- 	$(INSTALL) -m 0755 $(@D)/misc-modules/faulty.ko $(TARGET_DIR)/lib/modules/5.15.18/extra/
- 	$(INSTALL) -m 0755 $(@D)/misc-modules/hello.ko $(TARGET_DIR)/lib/modules/5.15.18/extra/
+ 	$(INSTALL) -m 0755 $(@D)/scull/scull.ko $(TARGET_DIR)/lib/modules/5.15.18/extra/
+ 	$(INSTALL) -m 0755 $(@D)/misc-modules/*.ko $(TARGET_DIR)/lib/modules/5.15.18/extra/
 endef
 
 $(eval $(kernel-module))
