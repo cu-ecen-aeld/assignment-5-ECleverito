@@ -30,14 +30,7 @@ case "$1" in
 
 	rm -f /dev/${device}pipe[0-3]
 	mknod /dev/${device}pipe0 c $major 4
-	mknod /dev/${device}pipe1 c $major 5
-	mknod /dev/${device}pipe2 c $major 6
-	mknod /dev/${device}pipe3 c $major 7
-	ln -sf ${device}pipe0 /dev/${device}pipe
-	chgrp $group /dev/${device}pipe[0-3] 
-	chmod $mode  /dev/${device}pipe[0-3]
-
-	rm -f /dev/${device}single
+	rm -f /dev/${device}pipe[0-3]
 	mknod /dev/${device}single  c $major 8
 	chgrp $group /dev/${device}single
 	chmod $mode  /dev/${device}single
@@ -87,7 +80,7 @@ case "$1" in
 	module="scull"
 	device="scull"
 
-	rmmod $module $* || exit 1
+	rmmod "/lib/modules/5.15.18/extra/${module}.ko" || exit 1
 
 	# Remove stale nodes
 
@@ -109,7 +102,7 @@ case "$1" in
 	fi
 
 	# invoke rmmod with all arguments we got
-	rmmod $module || exit 1
+	rmmod "/lib/modules/5.15.18/extra/${module}.ko" || exit 1
 
 	#Remove stale nodes
 	rmmod -f /dev/${device}
