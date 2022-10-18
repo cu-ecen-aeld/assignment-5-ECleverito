@@ -87,6 +87,8 @@ case "$1" in
 	module="scull"
 	device="scull"
 
+	rmmod $module $* || exit 1
+
 	# Remove stale nodes
 
 	rm -f /dev/${device} /dev/${device}[0-3] 
@@ -110,7 +112,7 @@ case "$1" in
 	rmmod $module || exit 1
 
 	#Remove stale nodes
-	rmmod $module || exit 1
+	rmmod -f /dev/${device}
 
 	rmmod hello	
 	;;
