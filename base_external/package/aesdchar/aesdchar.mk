@@ -6,7 +6,7 @@
 ##############################################################
 
 $(eval $(kernel-module))
-AESDCHAR_VERSION = '0a287a3c35c53a0dba61a74192bd2abaac184b3d'
+AESDCHAR_VERSION = '46c24595f9958abbe353ecd62be946e8503ee2cf'
 AESDCHAR_SITE = 'git@github.com:cu-ecen-aeld/assignments-3-and-later-ECleverito.git'
 AESDCHAR_SITE_METHOD = git
 AESDCHAR_GIT_SUBMODULES = YES

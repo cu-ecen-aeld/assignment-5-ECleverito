@@ -5,7 +5,7 @@
 #
 ##############################################################
 
-AESD_ASSIGNMENTS_VERSION = '5d5b0b14def82e67b3c7ceb7f1b907fd3e81d4e4'
+AESD_ASSIGNMENTS_VERSION = '1c7a02b3e03ad0773d5dba3b1253ce17006ffdb5'
 AESD_ASSIGNMENTS_SITE = 'git@github.com:cu-ecen-aeld/assignments-3-and-later-ECleverito.git'
 AESD_ASSIGNMENTS_SITE_METHOD = git
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
